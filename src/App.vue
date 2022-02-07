@@ -2,6 +2,7 @@
 </script>
 
 <template>
+  <div>Modal</div>
 </template>
 
 <style>
