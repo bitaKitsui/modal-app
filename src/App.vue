@@ -1,9 +1,7 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>Modal</div>
 </template>
 
-<style>
-</style>
+<style></style>
