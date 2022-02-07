@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import './styles/reset.css'
 import BaseButton from './components/atoms/BaseButton.vue'
 import BaseModal from './components/organisms/BaseModal.vue'
 </script>
