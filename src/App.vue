@@ -5,7 +5,7 @@ import BaseModal from './components/organisms/BaseModal.vue'
 </script>
 
 <template>
-  <div>
+  <div class="column">
     <BaseButton
       :label="'Open Modal'"
       :type="'button'"
@@ -16,4 +16,19 @@ import BaseModal from './components/organisms/BaseModal.vue'
   </div>
 </template>
 
-<style></style>
+<style>
+#app {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  width: 400px;
+  margin-top: 40px;
+}
+
+button {
+  border: 1px solid;
+  border-radius: 4px;
+}
+</style>
