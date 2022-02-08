@@ -11,6 +11,7 @@ import BaseModal from './components/organisms/BaseModal.vue'
       :type="'button'"
       :color="'secondary'"
       :outlined="true"
+      :width="'140px'"
     />
     <BaseModal />
   </div>
@@ -25,10 +26,5 @@ import BaseModal from './components/organisms/BaseModal.vue'
 .column {
   width: 400px;
   margin-top: 40px;
-}
-
-button {
-  border: 1px solid;
-  border-radius: 4px;
 }
 </style>
