@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import BaseCloseButton from '../atoms/BaseCloseButton.vue'
 import BaseFunctionButton from '../atoms/BaseFunctionButton.vue'
+
+interface Emits {
+  (event: 'close'): void
+}
+
+const emit = defineEmits<Emits>()
+
+const handleClick = () => {
+  emit('close')
+}
 </script>
 
 <template>
@@ -11,6 +21,7 @@ import BaseFunctionButton from '../atoms/BaseFunctionButton.vue'
       :color="'primary'"
       :outlined="true"
       :width="'70px'"
+      @close="handleClick"
     />
     <BaseFunctionButton
       :label="'Secondary Action'"

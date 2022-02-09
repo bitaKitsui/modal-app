@@ -7,8 +7,18 @@ interface Props {
   headerTitle: string
 }
 
+interface Emits {
+  (event: 'close'): void
+}
+
 const props = defineProps<Props>()
 const { headerTitle } = toRefs(props)
+
+const emit = defineEmits<Emits>()
+
+const handleClick = () => {
+  emit('close')
+}
 </script>
 
 <template>
@@ -19,6 +29,7 @@ const { headerTitle } = toRefs(props)
       :type="'button'"
       :outlined="false"
       :width="'40px'"
+      @close="handleClick"
     />
   </div>
 </template>

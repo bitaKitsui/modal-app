@@ -9,8 +9,18 @@ export interface Props {
   outlined?: boolean
 }
 
+interface Emits {
+  (event: 'close'): void
+}
+
 const props = defineProps<Props>()
 const { label, width, type, color, outlined } = toRefs(props)
+
+const emit = defineEmits<Emits>()
+
+const onClick = () => {
+  emit('close')
+}
 
 const classObject = computed(() => {
   return {
@@ -23,7 +33,7 @@ const classObject = computed(() => {
 </script>
 
 <template>
-  <button :type="type" :class="['close-button', classObject]">
+  <button :type="type" :class="['close-button', classObject]" @click="onClick">
     {{ label }}
   </button>
 </template>

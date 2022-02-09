@@ -9,6 +9,10 @@ export interface Props {
   outlined?: boolean
 }
 
+interface Emits {
+  (event: 'open'): void
+}
+
 const props = defineProps<Props>()
 const { label, width, type, color, outlined } = toRefs(props)
 
@@ -20,10 +24,16 @@ const classObject = computed(() => {
     secondary: color?.value === 'secondary',
   }
 })
+
+const emit = defineEmits<Emits>()
+
+const onClick = () => {
+  emit('open')
+}
 </script>
 
 <template>
-  <button :type="type" :class="['open-button', classObject]">
+  <button :type="type" :class="['open-button', classObject]" @click="onClick">
     {{ label }}
   </button>
 </template>
