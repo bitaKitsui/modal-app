@@ -12,6 +12,10 @@ export interface Props {
 const props = defineProps<Props>()
 const { label, width, type, color, outlined } = toRefs(props)
 
+const secondaryAction = () => {
+  console.log('hoge')
+}
+
 const classObject = computed(() => {
   return {
     outlined: outlined?.value,
@@ -23,7 +27,11 @@ const classObject = computed(() => {
 </script>
 
 <template>
-  <button :type="type" :class="['function-button', classObject]">
+  <button
+    :type="type"
+    :class="['function-button', classObject]"
+    @click="secondaryAction"
+  >
     {{ label }}
   </button>
 </template>
