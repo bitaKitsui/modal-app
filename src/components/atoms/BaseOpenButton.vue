@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, toRefs } from 'vue'
 
-export interface Props {
+interface Props {
   label: string
   width: string
   type: HTMLButtonElement
