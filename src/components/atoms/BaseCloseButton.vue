@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { computed, toRefs } from 'vue'
 
-interface Props {
+export interface Props {
   label: string
+  width: string
   type: HTMLButtonElement
   color?: 'primary' | 'secondary' | 'disabled'
-  outlined: boolean
-  width: string
+  outlined?: boolean
 }
 
 const props = defineProps<Props>()
-const { label, type, color, outlined, width } = toRefs(props)
+const { label, width, type, color, outlined } = toRefs(props)
 
-const outlinedClass = computed(() => {
+const classObject = computed(() => {
   return {
-    outlined: outlined.value,
-    text: !outlined.value,
+    outlined: outlined?.value,
+    text: !outlined?.value,
     primary: color?.value === 'primary',
     secondary: color?.value === 'secondary',
   }
@@ -23,25 +23,25 @@ const outlinedClass = computed(() => {
 </script>
 
 <template>
-  <button :type="type" :class="['button', outlinedClass]">
+  <button :type="type" :class="['close-button', classObject]">
     {{ label }}
   </button>
 </template>
 
 <style scoped>
-.button {
+.close-button {
   cursor: pointer;
   border-radius: 4px;
-  transition: opacity 0.2s;
-  width: v-bind(width);
+  font-weight: bold;
   min-height: 40px;
+  width: v-bind(width);
+  transition: opacity 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
 }
 
-.button:hover {
+.close-button:hover {
   opacity: 0.8;
 }
 

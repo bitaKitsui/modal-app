@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import BaseHeading from '../atoms/BaseHeading.vue'
-import BaseButton from '../atoms/BaseButton.vue'
 import { toRefs } from 'vue'
+import BaseHeading from '../atoms/BaseHeading.vue'
+import BaseCloseButton from '../atoms/BaseCloseButton.vue'
 
 interface Props {
   headerTitle: string
@@ -14,7 +14,7 @@ const { headerTitle } = toRefs(props)
 <template>
   <div class="header">
     <BaseHeading :value="headerTitle" />
-    <BaseButton
+    <BaseCloseButton
       :label="'×'"
       :type="'button'"
       :outlined="false"

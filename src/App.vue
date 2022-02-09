@@ -1,18 +1,12 @@
 <script setup lang="ts">
 import './styles/reset.css'
-import BaseButton from './components/atoms/BaseButton.vue'
 import BaseModal from './components/organisms/BaseModal.vue'
+import BaseOpenButton from './components/atoms/BaseOpenButton.vue'
 </script>
 
 <template>
   <div class="column">
-    <BaseButton
-      :label="'Open Modal'"
-      :type="'button'"
-      :color="'secondary'"
-      :outlined="true"
-      :width="'140px'"
-    />
+    <BaseOpenButton :label="'Open Modal'" :type="'button'" :width="'140px'" />
     <BaseModal />
   </div>
 </template>

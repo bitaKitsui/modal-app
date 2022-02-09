@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import BaseButton from '../atoms/BaseButton.vue'
+import BaseCloseButton from '../atoms/BaseCloseButton.vue'
+import BaseFunctionButton from '../atoms/BaseFunctionButton.vue'
 </script>
 
 <template>
   <div class="footer">
-    <BaseButton
+    <BaseCloseButton
       :label="'Close'"
       :type="'button'"
       :color="'primary'"
       :outlined="true"
       :width="'70px'"
     />
-    <BaseButton
+    <BaseFunctionButton
       :label="'Secondary Action'"
       :type="'button'"
       :outlined="false"
