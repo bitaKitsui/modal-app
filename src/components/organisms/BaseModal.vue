@@ -25,14 +25,26 @@ const handleClose = () => {
 
 <template>
   <div v-if="isActive" class="modal">
-    <BaseHeader :header-title="'Modal Title'" @close="handleClose" />
-    <BaseBody :body="MODAL_BODY" />
-    <BaseFooter @close="handleClose" />
+    <div class="modal-content">
+      <BaseHeader :header-title="'Modal Title'" @close="handleClose" />
+      <BaseBody :body="MODAL_BODY" />
+      <BaseFooter @close="handleClose" />
+    </div>
   </div>
 </template>
 
 <style scoped>
 .modal {
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content {
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -40,5 +52,8 @@ const handleClose = () => {
   border: 1px solid;
   border-radius: 4px;
   min-height: 300px;
+  background-color: white;
+  width: 400px;
+  margin: 0 auto;
 }
 </style>
